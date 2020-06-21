@@ -1,11 +1,10 @@
 package com.codeGym.Product.dtos;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class ProductDTO {
     private Long productId;

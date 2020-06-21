@@ -28,4 +28,17 @@ public class ProductDAOImpl extends AbstractBaseDAO implements ProductDAO {
         return getNamedParameterJdbcTemplate().query(sql.toString(), parameter, BeanPropertyRowMapper.newInstance(ProductDTO.class));
 
     }
+
+    @Override
+    public List<ProductDTO> getProductList() {
+        StringBuilder sql = new StringBuilder();
+        sql.append("select pr.product_id, ");
+        sql.append("pr.product_name, ");
+        sql.append("pr.provider, ");
+        sql.append("pr.quantity ");
+        sql.append("from product pr ");
+//        sql.append("where pr.product_name is not null ");
+        return getNamedParameterJdbcTemplate().query(sql.toString(), BeanPropertyRowMapper.newInstance(ProductDTO.class));
+
+    }
 }
